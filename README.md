@@ -32,7 +32,7 @@ TECHNICAL REQUIREMENTS
 1. Window based pc or laptop with internet connectivity
 2. Python programming language
 3. Django Framework
-4, Visual studio coding environment
+4. Visual studio coding environment
 5. SQLite3
 6. GitHub Hosting Platform
 
