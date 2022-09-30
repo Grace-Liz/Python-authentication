@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <style>
+        body{
+            text-align: center;
+            background: local;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiRzqyqRzDAbn2nHMEQiO-9iJWQWK6t71dAw&usqp=CAU');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-size: larger;
+            color: beige;
+        }
+        a{
+            font-size: xx-large;
+            margin-left: 30px;
+            align-items: right;
+        }
+
+        h1{
+            background-color: white;
+            color: black;
+        }
+        h2{
+            background-color: white;
+            text-decoration: underline;
+            color: black;
+        }
+        #main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 800px;
+            border: 2px;
+            border-color: black;
+        }
+        div.gallery img{
+            height: 250px;
+            width: 400px;
+        }
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 400px;
+        }
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissable fade show" role="alert">
+    <strong>Message:</strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>   
+    </div>
+    {% endfor%}
+
+    <h3>Welcome to Pythonista</h3>
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{ fname }}</h3>
+    <h4>You are successfully logged in!</h4>
+    <button type="submit"> <a href="/signout"> SignOut</a></button>
+    
+    {% else %}
+
+    <button type="submit"> <a href="{% url 'signup' %}">SignUp</a></button>
+    <button type="submit"> <a href="{% url 'signin' %}">SignIn</a></a></button>
+
+    {% endif %}
+
+    <h4>For new members, please click on the signup button above and add your details.</h4>
+    <h4>To confirm your attendance, click on the signin button above.</h4>
+    <h4>Below are some python links for your assurance! I promise it's worthwhile...</h4>
+    <h2>WHY PYTHON?</h2>
+    <main id="main">
+        <div class="gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNfygFM23PZIFpGGX7VvdpILpqjRwvahMJGA&usqp=CAU" alt="History of Python" >
+          <div class="desc"><a href="https://www.geeksforgeeks.org/history-of-python/">Learn all about Python!</a></div>
+        </div>
+
+        <div class="gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfpS3pAfPYEHStsb97ADZi4anPPxKQy6VAqQ&usqp=CAU" alt="What is Python?" >
+          <div class="desc"><a href="https://www.coursera.org/articles/what-is-python-used-for-a-beginners-guide-to-using-python#:~:text=Python%20is%20commonly%20used%20for,everyday%20tasks%2C%20like%20organizing%20finances.">Get Certified!</a></div>
+        </div>
+        <div class="gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0RE9cgyY4NLhanqvEbxI3xjOQVL1Sz8Z93A&usqp=CAU" alt="The Python Syntax" >
+          <div class="desc"><a href="https://www.w3schools.com/python/python_syntax.asp">Python Syntax!</a></div>
+        </div>
+
+        <div class="gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2n2YNdA83zX3JYODhVfcNtxyW5-ydSyEFHw&usqp=CAU" alt="Python's pros">
+            <div class="desc"><a href="https://www.upgrad.com/blog/reasons-why-python-popular-with-developers/">Importance of Python!</a></div>
+        </div>
+
+        <div class="gallery">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AtVEomodIKID3-nFVed2IQ_SFxKklBiFPw&usqp=CAU" alt="Python Meme" >
+            <div class="desc"><a href="https://www.coursera.org/articles/how-long-does-it-take-to-learn-python-tips-for-learning#:~:text=Python%20is%20actually%20one%20of,a%20line%20of%20code%20before.">Python is Easy!</a></div>
+        </div>
+
+        <div class="gallery">
+                <img src="http://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/10/Features-of-Python-1.jpg" alt="Feature of Python" >
+            <div class="desc"><a href="https://www.simplilearn.com/python-features-article">Features of Python</a></div>
+        </div>
+
+        </div>
+        
+    </main>
+
+</body>
+</html>
