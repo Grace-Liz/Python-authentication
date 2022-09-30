@@ -2,7 +2,7 @@
 
 GROUP MEMBERS
 1. Grace Oyoo
-2. Leila
+2. Leila Mohamed
 
 
 PROBLEM STATEMENT
